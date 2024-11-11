@@ -5,9 +5,11 @@ module full_adder (
     output sum,
     output carry_out
 );
-    // TODO: Insert your RTL here to calculate the sum and carry out bits.
-    // TODO: Remove these assign statements once you write your own RTL.
+    xor(sum, a, b, carry_in);
 
-    assign sum = 1'b0;
-    assign carry_out = 1'b0;
+    wire ab, ac, bc;
+    and(ab, a, b),
+       (ac, a, carry_in),
+       (bc, b, carry_in);
+    or(carry_out, ab, ac, bc);
 endmodule
