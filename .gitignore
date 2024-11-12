@@ -9,7 +9,6 @@ build/
 *.log
 *.debug
 *.str
-*.zip
 *.tmp
 *.rst
 *.os
