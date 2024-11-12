@@ -29,6 +29,19 @@ module counter_testbench();
 
         // TODO: Change input values and step forward in time to test
         // your counter and its clock enable/disable functionality.
+        #4 ce = 1;
+        
+        repeat (1_000_000) @(posedge clock);
+
+        #4 ce = 0;
+        repeat (1_000_000) @(posedge clock);
+
+        #4 ce = 1;
+        
+        repeat (1_000_000) @(posedge clock);
+
+        #4 ce = 0;
+        repeat (1_000_000) @(posedge clock);
 
 
         `ifndef IVERILOG
